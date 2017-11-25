@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+		<style type="text/css">
+			body {
+				font-family: 'Open Sans', sans-serif;
+				background: #f4f4f4;
+			}
+			h1, h2, h3, h4, h5, h6, nav {
+				font-family: 'Raleway', sans-serif;
+			}
+			h1.white, h2.white, h3.white, h4.white, h5.white, h6.white {
+				font-family: 'Raleway', sans-serif;
+				color: white;
+			}
+			.bg-faded {
+			    background-color: rgba(255, 255, 255, 1);
+			}
+			.top-Margin {
+			    margin-top: 6%;
+			}
+			.top-Margin-lg {
+			    margin-top: 10%;
+			}
+			footer {
+			    background-color: #7f4d24;
+			    color: #dcdcdc;
+			}
+			.orange-bk {
+				background-color: #b97330;
+			    color: #dcdcdc;
+			}
+			.btn {
+				border-radius: 0;
+			}
+			
+			.btn-brand {
+			    color: #ffffff;
+			    background-color: #d49954;
+			    border-color: #d49954;
+			}
+			.copyright {
+				background-color: #292929;
+				color: #dcdcdc;
+			}
+			hr {
+			    margin-top: 1rem;
+			    margin-bottom: 1rem;
+			    border: 0;
+			    border-top: 1px solid rgb(243, 206, 161);
+			}
+			body, html, .main {
+			    height: 100%;
+			    margin: 0;
+			}
+
+
+			.bg {
+			    /* The image used */
+			    background-image: 
+
+			    linear-gradient(
+			      rgba(0, 0, 0, 0.45), 
+			      rgba(0, 0, 0, 0.45)
+			    ),
+
+			    url("http://psp.my/images/playground-2-big.jpg");
+
+			    /* Full height */
+			    height: 100%; 
+
+			    /* Center and scale the image nicely */
+			    background-position: center;
+			    background-repeat: no-repeat;
+			    background-size: cover;
+			}
+
+			.header-cat {
+			    padding-right: 10px;
+			    padding-top: 7px;
+			}
+
+			.container-lg {
+				width: 140px;
+    			max-width: 100%;
+    			position: relative;
+			    margin-left: auto;
+			    margin-right: auto;
+			}
+
+			.parent {
+			  position: relative;
+			}
+
+			.vertical-center {
+			  position: absolute;
+			  top: 40%;
+			  transform: translateY(-40%);
+			  left: 50%;
+			  transform: translateX(-50%);
+			}
+
+			#div1, #div2, #div3, #div4 {
+				display: none;
+			}
+
+			.btn-outline-success {
+			    color: #c9893e;
+			    background-image: none;
+			    background-color: transparent;
+			    border-color: #c9893e;
+			}
+
+			/* unvisited link */
+			a:link {
+			    color: rgba(204, 141, 73, 0.79);
+			}
+
+			/* visited link */
+			a:visited {
+			   color: rgba(204, 141, 73, 0.79);
+			}
+
+			/* mouse over link */
+			a:hover {
+			    color: rgba(204, 141, 73, 1);
+			}
+
+			/* selected link */
+			a:active {
+			    color: rgba(204, 141, 73, 1);
+			}
+
+			a.white {
+			    color: rgba(255, 255, 255, 0.51);
+			    text-decoration: none;
+			}
+			a:hover.white {
+			    color: rgba(255, 255, 255, 11);
+			    text-decoration: underline;
+			}
+
+			a.dark {
+				color: #bfbfbf;
+			}
+
+			.dropdown-toggle::after {
+			    display: none;
+			}
+
+			.whitebk {
+				background-color: white;
+			}
+
+			.fa-small {
+				font-size: 0.25rem;
+				display: inline-block;
+			    font: normal normal normal 9px/1 FontAwesome;
+			    text-rendering: auto;
+			    -webkit-font-smoothing: antialiased;
+			}
+
+			.dropdown-menu {
+				border: 0;
+				padding-top: 2rem;
+			    padding-right: 0px;
+			    padding-bottom: 0.5rem;
+			    padding-left: 0px;
+			    background-color: white;
+			}
+			.dropdown-item {
+				color: #7f7f7f;
+				font-weight: 300;
+			}
+ 
+		</style>
+		<script type="text/javascript">
+			
+			$(document).ready(function(){
+			    
+			    $("#div1").fadeIn(2000);
+			    $("#div2").fadeIn(2000);
+			    $("#div3").fadeIn(5000);
+			    $("#div4").fadeIn(6000);
+
+			});
+
+			//Smooth Scrool
+
+			$(document).ready(function(){
+			  // Add smooth scrolling to all links
+			  $("a").on('click', function(event) {
+
+			    // Make sure this.hash has a value before overriding default behavior
+			    if (this.hash !== "") {
+			      // Prevent default anchor click behavior
+			      event.preventDefault();
+
+			      // Store hash
+			      var hash = this.hash;
+
+			      // Using jQuery's animate() method to add smooth page scroll
+			      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			      $('html, body').animate({
+			        scrollTop: $(hash).offset().top
+			      }, 800, function(){
+			   
+			        // Add hash (#) to URL when done scrolling (default click behavior)
+			        window.location.hash = hash;
+			      });
+			    } // End if
+			  });
+			});
+
+			 $(function(){
+			    $(".dropdown").on("show.bs.dropdown hide.bs.dropdown", function(){
+			      $(this).find(".caret").toggleClass("caretup");
+			    });
+			  });
+
+
+		</script>
+	</head>
+	<body>
+		<div class="bg main" id="div1">
+			<div class="container vertical-center text-center">
+				<div class="row parent">
+					<div class="col-md-12 text-center" id="div3">
+						<h1 style="color:white">Award-winning playground equipment manufacturer speciliaising in the design and build of high-quality playground equipment</h1>
+						<br />
+						<div id="div4"><h1 ><a href="#section2" style="color:white"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></h1></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="container-fluid px-3" id="div2">
+				<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+				
+						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+						<a class="navbar-brand" href="#"><img src="images/logo.png" width="50%" class="img-fluid"></a>
+						<div class="collapse navbar-collapse" id="navbarNavDropdown">
+							<ul class="navbar-nav mx-auto ">
+								<li class="nav-item active text-center">
+									<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item dropdown px-3 text-center">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									About
+									<i class="fa-circle fa-small" aria-hidden="true"></i>
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+										<a class="dropdown-item dark" href="#">Action</a>
+										<a class="dropdown-item dark" href="#">Another action</a>
+										<a class="dropdown-item dark" href="#">Something else here</a>
+									</div>
+								</li>
+								<li class="nav-item dropdown text-center">
+									<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Products
+									<small><i class=" fa-circle fa-small" aria-hidden="true"></i></small>
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+										<a class="dropdown-item dark" href="#">Action</a>
+										<a class="dropdown-item dark" href="#">Another action</a>
+										<a class="dropdown-item dark" href="#">Something else here</a>
+									</div>
+								</li>
+								<li class="nav-item dropdown px-3 text-center">
+									<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Projects
+									<small><i class=" fa-circle fa-small" aria-hidden="true"></i></small>
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+										<a class="dropdown-item dark" href="#">Action</a>
+										<a class="dropdown-item dark" href="#">Another action</a>
+										<a class="dropdown-item dark" href="#">Something else here</a>
+									</div>
+								</li>
+								<li class="nav-item text-center">
+									<a class="nav-link" href="#">Contact</a>
+								</li>
+							</ul>
+							<form class="form-inline my-2 my-md-0">
+							<h6 class="header-cat">Request a catalogue</h6>
+					          <input class="form-control mr-sm-2" type="text" placeholder="Enter your email">
+					          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">GO</button>
+					        </form>
+						</div>
+					
+					</div>
+				</nav><div id="section2"></div>
+				
+			</div>
+		</header>
+		
+
+		<section>
+			
+			<div class="container-fluid top-Margin">
+
+				<div class="row text-center">
+
+					<div class="col-md-6 p-3">
+
+						<img src="images/fp/1.jpg" class="img-fluid rounded mx-auto d-block">
+						<h4 class="mt-2">Image Title Goes Here</h4>
+
+					</div>
+
+					<div class="col-md-6 p-3">
+						<img src="images/fp/2.jpg" class="img-fluid rounded mx-auto d-block">
+						<h4 class="mt-2">Image Title Goes Here</h4>
+					</div>
+
+					
+
+				</div>
+					
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h1 ><a href="#section3"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></h1>
+					</div>
+				</div>
+
+			</div>
+
+
+		</section>
+
+			<div class="container mt-5" id="section3">
+
+				<div class="row whitebk">
+
+					<div class="col-md-12"></div>
+
+					<div class="col-md-12 mt-5 p-5">
+						<h3 class="pt-2 text-center">Children can learn and develop in a fun, stimulating and secure environment</h3>
+						<hr />
+						<br />
+
+						<img src="images/image9.jpg" class="img-fluid rounded mx-auto d-block" width="60%">
+
+					</div>
+
+					
+
+					<div class="col-md-12 px-5">
+
+						
+						<p>We design and manufacture our playground equipment at our workshop in West Sussex. We use traditional timber framing techniques to create beautifully crafted playground equipment that is attractive, durable and fun. Our equipment is hand crafted out of european hardwood that does not require chemical treatement so is both durable and kind to the environment. As we design and build all of our own playground equipment we are flexible and can adjust our designs your needs.<p>
+						
+						<p>We have experience of building a wide range of playgrounds from large bespoke projects to small individual pieces. We pride ourselves on the quality of our finish and avoid garish colours and synthetic products. We want our playground equipment to be natural, attractive, inviting and fun. We offer long warranties on our playground equipment as we build it to last.</p>
+
+					</div>
+
+					
+					<div class="col-md-12 text-center">
+						<h1 ><a href="#section6"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></h1>
+				
+					</div>
+
+				<div id="section6"></div>
+				</div>
+
+				
+
+				<div class="row mt-5 whitebk">
+
+					<div class="col-md-12 mt-5">
+
+						<h3 class="pt-2 text-center">Design</h3>
+
+								<img src="images/image10.jpg" class="img-fluid rounded mx-auto d-block">
+								<p></p>
+								<img src="images/image11.jpg" class="img-fluid rounded mx-auto d-block">
+								
+					</div>
+
+					<div class="col-md-12 px-5 pt-3">
+
+						
+						<p></p>
+						<p>Design of playground equipment presents a number of challenges. It needs to be designed to be robust and durable in an outdoor environment, to adhere to European play safety standards, to be aesthetically pleasing and above all to be challenging and fun. We try not to be too prescriptibe with our designs, we want children to be free to play as they want on our playground equipment and not be limited by bright synthetic one dimensional play equipment. We can help you with the design process. If you are an architect we can check your designs to ensure they are EN 1176 compliant. We can produce detailed construction drawings and if you want suggestions on how to add play value. We can design your play space from initial conception through to detailed construction drawings and engineering calculations through to it being inspected by an independent play inspector.</p>
+
+						<p>We have years of experience designing and building playgrounds. We have our own in house design team who have spent time on site building playground equipment so they understand the issues involved in terms of engineering, play safety standards and durability. We are conversant with most CAD software and are able to provide you with detailed drawings and advise on EN 1176 compliance. Wherever possible we aim to use traditional timber framing techiniques as these allow for the natural movement of timber in the outdoor environment. This not only improves the durability of the equipment but also prevents gaps appearing in the wrong place as the timber dries. We are more than happy to either create a design for you or look at the designs you have created and provide expert feedback in terms of possible construction techniques and play safety standards compliance.</p>
+
+					</div>
+
+
+				</div>
+
+				<div class="row whitebk mt-5">
+
+					
+
+					<div class="col-md-7 p-5 text-left">
+
+						<h3>Manufacture</h3>
+						<p class="py-2"></p>
+						<p>We have our own manufacturing facility based in Three Bridges in Sussex. This is a large facility that is located close to our timber suppliers. This means that we are able to maintain tight quality control over our raw materials with minimal lead in times before we can start manufacturing our playground equipment. Our office and design team are co-located at this facility so when manufacturing complex structures the manufacturing team and the design team can be in constant contact to ensure that details are adhered to.</p>
+
+						<p>You are welcome to come to our facility to inspect your equipment prior to delivery. We can also have the play safety inspector check the equipment at our facility before it is delivered to site to minimise any play inspection snagging.</p>
+
+					
+
+
+					</div>
+
+					<div class="col-md-5 p-4 mt-5">
+						<p class="pt-4"></p>
+						<img src="images/image12.jpg" class="img-fluid">
+						
+
+					</div>
+
+
+				</div>
+
+				<div class="row mb-5 whitebk mt-5">
+
+				
+					<div class="col-md-7 p-5 text-left">
+
+						
+						<h3>Aftercare</h3>
+						<p class="py-2"></p>
+						<p>When purchasing playground equipment you want playground equipment that is going to last and if there is a failure then the problem will be rectified quickly. Because we manufacture our own equipment in the UK and our raw material suppliers are local we are able to quickly respond to issues in the unlikley event of there being something wrong with our equipment.</p>
+
+						<p>We also provide detailed maintenance guides for all of our equipment. Because our equipment is built from durable hardwood and designed and built for the outdoor environment it requires very little maintenance. We are confident about the durability of our equipment and offer long warranties.</p>
+
+
+					</div>
+
+						<div class="col-md-5 p-4 mt-5">
+						<p class="pt-4"></p>
+						<img src="images/image13.jpg" class="img-fluid">
+						
+						
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+
+		<footer>
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-md-12 py-5"></div>
+
+					<div class="col-md-6 p-4">
+
+						<h5>Contact Us</h5>
+						<address>Duncan + Grove Ltd<br /> 
+						34 Stephenson Way <br /> 
+						Three Bridges <br /> 
+						London <br /> 
+						RH10 1TN </address>
+
+						<p>Telephone: 020 7112 7551 </p>
+						<p>Email: enquiries@duncanandgrove.com</p> 
+						<br /> 
+						<h5>Duncan + Grove</h5>
+						<p>We have experience of building a wide range of playgrounds from large bespoke projects to small individual pieces. We pride ourselves on the quality of our finish and avoid garish colours and synthetic products. We want our playground equipment to be natural, attractive, inviting and fun. We offer long warranties on our playground equipment as we build it to last.</p>
+						<p>Do you have a question about our products? Would you like a catalogue or a quote? Contact us and let us know!</p>
+						<a href="" class="btn btn-secondary dark">Email Us</a>
+
+					</div>
+
+					<div class="col-md-3 p-4">
+
+						<h5>Playground Equipment</h5>
+						<ul class="nav flex-column">
+						  <li class="nav-item">
+						    <a class="nav-link white" href="#">Benches</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Climbing Frames</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Climbing Nets</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Monkey Bars</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Musical Instruments</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Outdoor Gym Equipment</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Roundabouts</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Seesaws</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Accessible Play</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Slides</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link white" href="#">Springers</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link white" href="#">Swings</a>
+						  </li>
+						</ul>
+
+					</div>
+
+					<div class="col-md-3 p-4">
+
+						<h5>Playground Projects</h5>
+						<ul class="nav flex-column">
+						  <li class="nav-item">
+						    <a class="nav-link white" href="#">Alexandra Road Park</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Bramshill Open Space</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Brandlehow School</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Chatham Historic Dockyard</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Chisenhale School</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Culloden School</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Cypress School</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Drapers Field</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">George Carey School</a>
+						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link white" href="#">Old Ford School</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link white" href="#">The Village School</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link white" href="#">Woodhouse Park</a>
+						  </li>
+
+						  	
+						</ul>
+
+					</div>
+					<div class="col-md-12 py-5"></div>
+				</div>
+
+			</div>
+				
+
+
+
+		</footer>
+
+
+		<section class="copyright">
+
+			<div class="container-fluid">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-md-12 text-center">
+
+							<p class="mt-3"><small>© Copyright 2017 Duncan & Grove Ltd.</small></p>
+							<h4><a href="#div1"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></h4>
+
+						</div>
+
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+
+	
+		<!-- jQuery first, then Tether, then Bootstrap JS. -->
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+		<!--<script type="text/javascript">
+
+		    $("#fp-image").backstretch(
+		      "http://www.eibe.net/media/image/slider_indoor.jpg"
+		   	);
+
+    	</script> -->
+	</body>
+</html>
