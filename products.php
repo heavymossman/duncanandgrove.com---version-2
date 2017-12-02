@@ -1,7 +1,14 @@
 <?php include 'header.php';?>
 
 
+
+
 <?php include 'nav.php';?>
+
+
+
+
+
 
 
 
@@ -15,7 +22,16 @@
 			</div>
 		</div>
 	</div>
+
 </section>
+
+
+
+
+
+
+
+
 
 
 
